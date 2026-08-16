@@ -1,308 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>By jeje. | Premium Phone Cases</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
-  </style>
-</head>
-<body class="bg-[#faf7f2] text-stone-800 min-h-screen flex flex-col justify-between transition-colors duration-300" id="app">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>By jeje. - Phone Case Customizer</title>
 
-  <!-- Header Navigation -->
-  <header class="sticky top-0 z-30 bg-[#faf7f2]/90 backdrop-blur border-b border-stone-200/60 px-4 py-3 flex justify-between items-center max-w-md mx-auto w-full">
-    <div class="flex items-center gap-2">
-      <button onclick="switchTab('home')" class="text-xl font-serif font-bold tracking-tight">By jeje.</button>
-    </div>
-    <div class="flex items-center gap-3">
-      <button id="themeToggle" class="p-2 rounded-full hover:bg-stone-200/50 text-sm">🌙</button>
-      <button onclick="toggleCart()" class="relative p-2 bg-stone-100 rounded-full hover:bg-stone-200">
-        🛍️ <span id="cartCount" class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS Link -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <a href="#" class="brand-logo">By<br>jeje<span>.</span></a>
+    <div class="nav-icons">
+      <button class="icon-btn"><i data-lucide="search"></i></button>
+      <button class="icon-btn">
+        <i data-lucide="heart"></i>
+        <span class="badge">0</span>
       </button>
+      <button class="icon-btn">
+        <i data-lucide="shopping-bag"></i>
+        <span class="badge">0</span>
+      </button>
+      <button class="icon-btn"><i data-lucide="moon"></i></button>
+      <button class="icon-btn"><i data-lucide="user"></i></button>
+      <button class="icon-btn"><i data-lucide="menu"></i></button>
     </div>
   </header>
 
-  <!-- Navigation Tabs Bar -->
-  <nav class="max-w-md mx-auto w-full bg-white/80 border-b border-stone-200 text-xs flex justify-around py-2 font-medium sticky top-[53px] z-20 backdrop-blur">
-    <button onclick="switchTab('home')" id="tab-home" class="text-pink-600 font-bold border-b-2 border-pink-500 pb-1">Home</button>
-    <button onclick="switchTab('products')" id="tab-products" class="text-stone-500 pb-1">Catalog</button>
-    <button onclick="switchTab('customizer')" id="tab-customizer" class="text-stone-500 pb-1">jejeStudio</button>
-  </nav>
+  <div class="container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <span class="hero-badge">JEJE PROTECTION</span>
+      <h1 class="hero-title">Retro Elegance.<br>Modern <i>Chic.</i></h1>
+      <p class="hero-desc">By jeje. crafts premium, aesthetically styled protective phone cases designed to complement your daily look.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn-pink">Explore Shop &rsaquo;</a>
+        <a href="#customizer" class="btn-glass">Design Your Own</a>
+      </div>
+    </section>
 
-  <!-- Container -->
-  <main class="max-w-md mx-auto w-full px-4 py-6 flex-1">
+    <!-- Customizer Section -->
+    <section id="customizer">
+      <h2 class="section-title">jejeStudio Case Customizer</h2>
+      <p class="section-subtitle">Design a bespoke phone case featuring custom graphics, textures, and typography.</p>
 
-    <!-- PAGE 1: HOME PAGE -->
-    <div id="page-home" class="space-y-8">
-      <!-- Hero Banner -->
-      <section class="text-center py-6">
-        <span class="text-[10px] tracking-widest text-pink-600 font-bold uppercase bg-pink-100/60 px-3 py-1 rounded-full">JEJE PROTECTION</span>
-        <h2 class="text-3xl font-serif mt-3 mb-3 leading-tight">Retro Elegance.<br/><span class="italic font-light text-pink-600">Modern Chic.</span></h2>
-        <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-6">
-          By jeje. crafts premium, aesthetically styled protective phone cases designed to complement your daily look.
-        </p>
-        <div class="flex justify-center gap-3">
-          <button onclick="switchTab('products')" class="bg-pink-500 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-sm hover:bg-pink-600 transition flex items-center gap-1">Explore Shop &rarr;</button>
-          <button onclick="switchTab('customizer')" class="border border-stone-800 px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-stone-800 hover:text-white transition">Design Your Own</button>
+      <!-- Interactive Phone Preview -->
+      <div class="phone-preview-card">
+        <div class="phone-case">
+          <div class="camera-bump"></div>
         </div>
-      </section>
-
-      <!-- Feature Card -->
-      <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-3 text-center">
-        <span class="text-xl">🛡️</span>
-        <h3 class="font-serif font-bold text-lg">10ft Drop Certified</h3>
-        <p class="text-xs text-stone-500 leading-relaxed">Premium shock-absorbing bumper edges and high-impact clear backing safeguard your device from high drops.</p>
-      </section>
-
-      <!-- Feature Card 2 -->
-      <section class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-3 text-center">
-        <span class="text-xl">✨</span>
-        <h3 class="font-serif font-bold text-lg">Anti-Yellowing Composites</h3>
-        <p class="text-xs text-stone-500 leading-relaxed">Advanced UV-resistant acrylic composite prevents ambering, keeping clear gel cases beautiful for longer.</p>
-      </section>
-    </div>
-
-    <!-- PAGE 2: PRODUCTS CATALOG -->
-    <div id="page-products" class="hidden space-y-6">
-      <div class="text-center">
-        <h3 class="text-2xl font-serif font-bold">Featured Drops</h3>
-        <p class="text-xs text-stone-500 mt-1">Explore our aesthetic protective collections</p>
       </div>
 
-      <!-- Filters Simulation -->
-      <div class="bg-white p-3 rounded-xl border border-stone-200/80 text-xs space-y-2">
-        <input type="text" placeholder="🔍 Search catalog..." class="w-full p-2 bg-stone-50 rounded-lg border border-stone-200 outline-none text-xs"/>
+      <!-- 1. Device Selection -->
+      <div class="option-card">
+        <div class="option-header">
+          <i data-lucide="smartphone"></i> 1. Choose Device
+        </div>
+        <select class="select-input">
+          <option>iPhone 15 Pro</option>
+          <option>iPhone 15 Pro Max</option>
+          <option>iPhone 14</option>
+        </select>
       </div>
 
-      <!-- Grid Products -->
-      <div class="grid grid-cols-2 gap-4">
+      <!-- 2. Material Texture Selection -->
+      <div class="option-card">
+        <div class="option-header">
+          <i data-lucide="palette"></i> 2. Choose Material Texture
+        </div>
+        <div class="grid-buttons">
+          <button class="grid-btn active">Clear Gel</button>
+          <button class="grid-btn">Stealth Matte</button>
+          <button class="grid-btn">Gold Marble</button>
+          <button class="grid-btn">Wood Veneer</button>
+          <button class="grid-btn">French Leather</button>
+          <button class="grid-btn">Neon Gradient</button>
+        </div>
         
-        <!-- Item 1 -->
-        <div class="bg-white rounded-2xl p-3 border border-stone-200/80 shadow-sm flex flex-col justify-between">
-          <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=400" alt="Case" class="w-full h-40 object-cover rounded-xl mb-2"/>
-          <div>
-            <span class="text-[9px] uppercase tracking-wider text-pink-600 font-bold">iPhone Series</span>
-            <h4 class="font-bold text-xs line-clamp-1">Aura Holographic Case</h4>
-            <p class="text-xs font-semibold text-stone-700 mt-1">1200 EGP</p>
-          </div>
-          <button onclick="addToCart('Aura Holographic Case', 1200)" class="mt-3 w-full bg-stone-900 text-white py-1.5 rounded-lg text-xs hover:bg-stone-800 transition">+ Add</button>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="bg-white rounded-2xl p-3 border border-stone-200/80 shadow-sm flex flex-col justify-between">
-          <img src="https://images.unsplash.com/photo-1601593378480-f03495d43c22?w=400" alt="Case" class="w-full h-40 object-cover rounded-xl mb-2"/>
-          <div>
-            <span class="text-[9px] uppercase tracking-wider text-pink-600 font-bold">iPhone Series</span>
-            <h4 class="font-bold text-xs line-clamp-1">Stealth Carbon Fiber Case</h4>
-            <p class="text-xs font-semibold text-stone-700 mt-1">1199 EGP</p>
-          </div>
-          <button onclick="addToCart('Stealth Carbon Fiber Case', 1199)" class="mt-3 w-full bg-stone-900 text-white py-1.5 rounded-lg text-xs hover:bg-stone-800 transition">+ Add</button>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="bg-white rounded-2xl p-3 border border-stone-200/80 shadow-sm flex flex-col justify-between">
-          <img src="https://images.unsplash.com/photo-1541877234193-ac6b3388086a?w=400" alt="Case" class="w-full h-40 object-cover rounded-xl mb-2"/>
-          <div>
-            <span class="text-[9px] uppercase tracking-wider text-pink-600 font-bold">Samsung Series</span>
-            <h4 class="font-bold text-xs line-clamp-1">Nordic Walnut Wood Case</h4>
-            <p class="text-xs font-semibold text-stone-700 mt-1">1500 EGP</p>
-          </div>
-          <button onclick="addToCart('Nordic Walnut Wood Case', 1500)" class="mt-3 w-full bg-stone-900 text-white py-1.5 rounded-lg text-xs hover:bg-stone-800 transition">+ Add</button>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="bg-white rounded-2xl p-3 border border-stone-200/80 shadow-sm flex flex-col justify-between">
-          <img src="https://images.unsplash.com/photo-1535157412991-2ef801c1748b?w=400" alt="Case" class="w-full h-40 object-cover rounded-xl mb-2"/>
-          <div>
-            <span class="text-[9px] uppercase tracking-wider text-pink-600 font-bold">Pixel Series</span>
-            <h4 class="font-bold text-xs line-clamp-1">Chic Plum Pebbled Leather</h4>
-            <p class="text-xs font-semibold text-stone-700 mt-1">1800 EGP</p>
-          </div>
-          <button onclick="addToCart('Chic Plum Pebbled Leather', 1800)" class="mt-3 w-full bg-stone-900 text-white py-1.5 rounded-lg text-xs hover:bg-stone-800 transition">+ Add</button>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PAGE 3: JEJESTUDIO CUSTOMIZER -->
-    <div id="page-customizer" class="hidden space-y-6">
-      <div class="text-center">
-        <h3 class="text-2xl font-serif font-bold">jejeStudio Case Customizer</h3>
-        <p class="text-xs text-stone-500 mt-1">Design a bespoke phone case featuring custom text & typography</p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-sm space-y-5">
-        <!-- Live Preview -->
-        <div class="w-40 h-72 mx-auto border-4 border-stone-800 rounded-[28px] p-3 flex flex-col justify-between items-center relative shadow-md bg-pink-50 transition-all" id="casePreview">
-          <div class="w-10 h-2.5 bg-stone-800 rounded-full"></div>
-          <div id="previewText" class="text-center font-serif text-stone-800 text-sm font-semibold break-words px-2">YOUR TEXT</div>
-          <div class="text-[9px] text-stone-400 font-bold tracking-widest">By jeje.</div>
-        </div>
-
-        <!-- Controls -->
-        <div class="space-y-4 text-xs">
-          <div>
-            <label class="block font-semibold mb-1">1. Choose Device</label>
-            <select id="deviceSelect" class="w-full border rounded-lg p-2.5 bg-stone-50 outline-none">
-              <option>iPhone 15 Pro</option>
-              <option>iPhone 14 / 13</option>
-              <option>Samsung Galaxy S24</option>
-              <option>Google Pixel 8</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block font-semibold mb-1">2. Print Custom Text</label>
-            <input type="text" id="customTextInput" placeholder="Type name, monogram, or phrase" class="w-full border rounded-lg p-2.5 bg-stone-50 outline-none focus:ring-1 focus:ring-pink-500"/>
-          </div>
-
-          <button onclick="addCustomToCart()" class="w-full bg-pink-500 text-white py-3 rounded-xl font-bold shadow-sm hover:bg-pink-600 transition">
-            Add Custom Case to Cart (1500 EGP)
-          </button>
+        <p class="sub-label">CASE ACCENT/TRIM COLOR</p>
+        <div class="color-dots">
+          <div class="color-dot active" style="background-color: #18181B;"></div>
+          <div class="color-dot" style="background-color: #EC4899;"></div>
+          <div class="color-dot" style="background-color: #1E3A8A;"></div>
+          <div class="color-dot" style="background-color: #064E3B;"></div>
+          <div class="color-dot" style="background-color: #DC2626;"></div>
+          <div class="color-dot" style="background-color: #7C3AED;"></div>
         </div>
       </div>
-    </div>
 
-  </main>
-
-  <!-- Sidebar Cart Drawer -->
-  <div id="cartDrawer" class="fixed inset-0 bg-black/40 z-50 hidden flex justify-end">
-    <div class="bg-white w-full max-w-xs h-full p-5 flex flex-col justify-between">
-      <div>
-        <div class="flex justify-between items-center pb-4 border-b">
-          <h3 class="font-serif font-bold text-lg">Your Cart</h3>
-          <button onclick="toggleCart()" class="text-stone-400 text-sm">✕</button>
+      <!-- 3. Custom Image Upload -->
+      <div class="option-card">
+        <div class="option-header">
+          <i data-lucide="image"></i> 3. Upload Custom Art
         </div>
-        <div id="cartItems" class="py-4 space-y-3 text-xs">
-          <p class="text-stone-400 text-center py-6">Your cart is currently empty.</p>
+        <div class="upload-box">
+          <i data-lucide="upload-cloud" class="upload-icon"></i>
+          <p class="upload-main-text">Drag and drop image here or <span>browse files</span></p>
+          <p class="upload-sub-text">Supports JPEG, PNG under 5MB</p>
         </div>
       </div>
-      <div id="cartFooter" class="border-t pt-4 hidden">
-        <div class="flex justify-between font-bold text-sm mb-4">
-          <span>Total:</span>
-          <span id="cartTotal">0 EGP</span>
+
+      <!-- 4. Typography Customization -->
+      <div class="option-card">
+        <div class="option-header">
+          <i data-lucide="type"></i> 4. Print Custom Text
         </div>
-        <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 text-white py-2.5 rounded-xl text-xs font-bold hover:bg-green-700 transition">
-          Checkout via WhatsApp 💬
-        </button>
+        <input type="text" class="text-input" placeholder="Type name, monogram, or phrase">
+        
+        <p class="sub-label">LUXURY FONT FAMILY</p>
+        <div class="grid-buttons grid-4">
+          <button class="grid-btn active">Modern Sans</button>
+          <button class="grid-btn">Royal Serif</button>
+          <button class="grid-btn">Tech Mono</button>
+          <button class="grid-btn">Cursive</button>
+        </div>
+
+        <p class="sub-label">TEXT COLOR</p>
+        <div class="color-dots space-mb">
+          <div class="color-dot border-dot" style="background-color: #FFFFFF;"></div>
+          <div class="color-dot active" style="background-color: #000000;"></div>
+          <div class="color-dot" style="background-color: #EC4899;"></div>
+          <div class="color-dot" style="background-color: #FEFCE8;"></div>
+          <div class="color-dot" style="background-color: #00F5D4;"></div>
+        </div>
+
+        <div class="slider-row">
+          <span>Text Size</span>
+          <span>20px</span>
+        </div>
+        <input type="range" class="range-slider" value="20">
+
+        <div class="slider-row">
+          <span>Vertical Position</span>
+          <span>75%</span>
+        </div>
+        <input type="range" class="range-slider" value="75">
       </div>
-    </div>
+
+      <!-- Checkout / Add Button -->
+      <button class="btn-add-cart">Add Custom Case to Cart (1500 EGP)</button>
+    </section>
+
   </div>
 
-  <!-- Footer -->
-  <footer class="border-t border-stone-200/60 bg-white py-6 text-center text-xs text-stone-400 max-w-md mx-auto w-full">
-    <p class="font-serif font-bold text-stone-600 text-sm mb-1">By jeje.</p>
-    <p>Premium protective phone cases & customizer.</p>
-  </footer>
-
   <script>
-    // Tab Navigation
-    function switchTab(tab) {
-      document.getElementById('page-home').classList.add('hidden');
-      document.getElementById('page-products').classList.add('hidden');
-      document.getElementById('page-customizer').classList.add('hidden');
-
-      document.getElementById('tab-home').className = "text-stone-500 pb-1";
-      document.getElementById('tab-products').className = "text-stone-500 pb-1";
-      document.getElementById('tab-customizer').className = "text-stone-500 pb-1";
-
-      document.getElementById('page-' + tab).classList.remove('hidden');
-      document.getElementById('tab-' + tab).className = "text-pink-600 font-bold border-b-2 border-pink-500 pb-1";
-    }
-
-    // Customizer Live Input
-    const textInput = document.getElementById('customTextInput');
-    const previewText = document.getElementById('previewText');
-    textInput.addEventListener('input', (e) => {
-      previewText.textContent = e.target.value || 'YOUR TEXT';
-    });
-
-    // Dark Mode Toggle
-    const themeBtn = document.getElementById('themeToggle');
-    const app = document.getElementById('app');
-    let isDark = false;
-    themeBtn.addEventListener('click', () => {
-      isDark = !isDark;
-      if (isDark) {
-        app.classList.replace('bg-[#faf7f2]', 'bg-stone-900');
-        app.classList.replace('text-stone-800', 'text-stone-100');
-      } else {
-        app.classList.replace('bg-stone-900', 'bg-[#faf7f2]');
-        app.classList.replace('text-stone-100', 'text-stone-800');
-      }
-    });
-
-    // Cart Logic
-    let cart = [];
-    
-    function toggleCart() {
-      document.getElementById('cartDrawer').classList.toggle('hidden');
-    }
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCart();
-      toggleCart();
-    }
-
-    function addCustomToCart() {
-      const device = document.getElementById('deviceSelect').value;
-      const text = textInput.value || 'Custom Text';
-      cart.push({ name: `Custom Case (${device}) - "${text}"`, price: 1500 });
-      updateCart();
-      toggleCart();
-    }
-
-    function updateCart() {
-      document.getElementById('cartCount').textContent = cart.length;
-      const cartItems = document.getElementById('cartItems');
-      const cartFooter = document.getElementById('cartFooter');
-      
-      if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="text-stone-400 text-center py-6">Your cart is currently empty.</p>';
-        cartFooter.classList.add('hidden');
-        return;
-      }
-
-      let total = 0;
-      cartItems.innerHTML = cart.map((item, index) => {
-        total += item.price;
-        return `
-          <div class="flex justify-between items-center border-b pb-2">
-            <div>
-              <p class="font-bold text-stone-700">${item.name}</p>
-              <p class="text-stone-400">${item.price} EGP</p>
-            </div>
-            <button onclick="removeItem(${index})" class="text-red-400 text-xs">✕</button>
-          </div>
-        `;
-      }).join('');
-
-      document.getElementById('cartTotal').textContent = total + ' EGP';
-      cartFooter.classList.remove('hidden');
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
-
-    function checkoutWhatsApp() {
-      const phoneNumber = "201000000000"; // اكتب رقم الواتساب بتاعك هنا مع كود الدولة
-      let message = "مرحباً، أود طلب المشتريات التالية من By jeje:\n\n";
-      let total = 0;
-      cart.forEach((item, i) => {
-        message += `${i+1}. ${item.name} - ${item.price} EGP\n`;
-        total += item.price;
-      });
-      message += `\nالإجمالي: ${total} EGP`;
-      
-      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-    }
+    lucide.createIcons();
   </script>
 </body>
 </html>
