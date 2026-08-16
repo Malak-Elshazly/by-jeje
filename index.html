@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>By jeje. | Premium Phone Cases</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#faf8f2] text-stone-800 transition-colors duration-300" id="app">
+
+  <header class="sticky top-0 z-30 bg-[#faf8f2]/90 backdrop-blur border-b border-stone-200 px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-serif font-bold tracking-tight">By jeje.</h1>
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="p-2 rounded-full hover:bg-stone-200 text-sm">🌙</button>
+      <button class="relative p-2 bg-stone-100 rounded-full hover:bg-stone-200">
+        🛍️ <span id="cartCount" class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="max-w-4xl mx-auto text-center px-6 py-12">
+    <span class="text-xs tracking-widest text-pink-600 font-semibold uppercase">JEJE PROTECTION</span>
+    <h2 class="text-4xl md:text-5xl font-serif mt-2 mb-4">Retro Elegance. <br/><span class="italic font-light">Modern Chic.</span></h2>
+    <p class="text-stone-600 max-w-md mx-auto mb-6 text-sm">
+      Crafting premium, aesthetically styled protective phone cases designed to complement your daily look.
+    </p>
+    <div class="flex justify-center gap-4">
+      <a href="#catalog" class="bg-pink-500 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-pink-600 transition">Explore Shop</a>
+      <a href="#customizer" class="border border-stone-800 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-stone-800 hover:text-white transition">Design Your Own</a>
+    </div>
+  </section>
+
+  <section id="customizer" class="max-w-xl mx-auto my-12 p-6 bg-white rounded-2xl shadow-sm border border-stone-200">
+    <h3 class="text-2xl font-serif font-bold mb-1 text-center">jejeStudio Case Customizer</h3>
+    <p class="text-xs text-stone-500 text-center mb-6">Design a bespoke phone case with custom text & options.</p>
+
+    <div class="w-44 h-80 mx-auto border-4 border-stone-800 rounded-[30px] p-3 flex flex-col justify-between items-center relative shadow-inner mb-6 transition-all" id="casePreview">
+      <div class="w-12 h-3 bg-stone-800 rounded-full"></div>
+      <div id="previewText" class="text-center font-serif text-stone-700 text-sm break-words px-2">YOUR TEXT</div>
+      <div class="text-[10px] text-stone-400">By jeje.</div>
+    </div>
+
+    <div class="space-y-4 text-sm">
+      <div>
+        <label class="block font-medium mb-1">1. Choose Device</label>
+        <select id="deviceSelect" class="w-full border rounded-lg p-2 bg-stone-50">
+          <option>iPhone 15 Pro</option>
+          <option>Samsung Galaxy S24</option>
+          <option>Google Pixel 8</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1">2. Print Custom Text</label>
+        <input type="text" id="customTextInput" placeholder="Type name, monogram, or phrase" class="w-full border rounded-lg p-2 bg-stone-50 focus:outline-none focus:ring-1 focus:ring-pink-500" />
+      </div>
+
+      <button onclick="addToCart('Custom Case')" class="w-full bg-stone-900 text-white py-3 rounded-xl font-medium hover:bg-stone-800 transition">
+        Add Custom Case to Cart (1,500 EGP)
+      </button>
+    </div>
+  </section>
+
+  <script>
+    // Live text update in customizer
+    const textInput = document.getElementById('customTextInput');
+    const previewText = document.getElementById('previewText');
+    textInput.addEventListener('input', (e) => {
+      previewText.textContent = e.target.value || 'YOUR TEXT';
+    });
+
+    // Dark Mode Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const app = document.getElementById('app');
+    let isDark = false;
+
+    themeBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      if (isDark) {
+        app.classList.replace('bg-[#faf8f2]', 'bg-stone-900');
+        app.classList.replace('text-stone-800', 'text-stone-100');
+      } else {
+        app.classList.replace('bg-stone-900', 'bg-[#faf8f2]');
+        app.classList.replace('text-stone-100', 'text-stone-800');
+      }
+    });
+
+    // Simple Cart Counter
+    let count = 0;
+    function addToCart(itemName) {
+      count++;
+      document.getElementById('cartCount').textContent = count;
+      alert(`${itemName} added to your cart!`);
+    }
+  </script>
+</body>
+</html>
