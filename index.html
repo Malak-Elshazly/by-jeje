@@ -3,157 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>By jeje. - Phone Case Customizer</title>
+  <title>By jeje. - Official Store</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- External CSS Link -->
+  <!-- External Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons Script -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <a href="#" class="brand-logo">By<br>jeje<span>.</span></a>
+  <!-- Header -->
+  <header class="main-header">
+    <a href="#" class="brand-logo">By<br>jeje<span class="dot">.</span></a>
+    
     <div class="nav-icons">
-      <button class="icon-btn"><i data-lucide="search"></i></button>
-      <button class="icon-btn">
+      <button class="icon-btn" aria-label="Search"><i data-lucide="search"></i></button>
+      <button class="icon-btn" aria-label="Wishlist">
         <i data-lucide="heart"></i>
         <span class="badge">0</span>
       </button>
-      <button class="icon-btn">
+      <button class="icon-btn" aria-label="Cart">
         <i data-lucide="shopping-bag"></i>
         <span class="badge">0</span>
       </button>
-      <button class="icon-btn"><i data-lucide="moon"></i></button>
-      <button class="icon-btn"><i data-lucide="user"></i></button>
-      <button class="icon-btn"><i data-lucide="menu"></i></button>
+      <button class="icon-btn" aria-label="Toggle Mode"><i data-lucide="moon"></i></button>
+      <button class="icon-btn" aria-label="Account"><i data-lucide="lock"></i></button>
+      <button class="icon-btn" aria-label="Menu"><i data-lucide="menu"></i></button>
     </div>
   </header>
 
-  <div class="container">
-    
-    <!-- Hero Banner -->
+  <main class="container">
+
+    <!-- Section 1: Main Hero Banner -->
     <section class="hero-banner">
       <span class="hero-badge">JEJE PROTECTION</span>
       <h1 class="hero-title">Retro Elegance.<br>Modern <i>Chic.</i></h1>
-      <p class="hero-desc">By jeje. crafts premium, aesthetically styled protective phone cases designed to complement your daily look.</p>
+      <p class="hero-desc">
+        By jeje. crafts premium, aesthetically styled protective phone cases designed to complement your daily look. Explore our capsule collections or design your own bespoke shell.
+      </p>
       <div class="hero-actions">
-        <a href="#catalog" class="btn-pink">Explore Shop &rsaquo;</a>
-        <a href="#customizer" class="btn-glass">Design Your Own</a>
+        <a href="#products" class="btn-pink">Explore Shop <span>&rsaquo;</span></a>
+        <a href="#customizer" class="btn-glass">Design Your Own <span class="txt-icon">T</span></a>
       </div>
     </section>
 
-    <!-- Customizer Section -->
-    <section id="customizer">
-      <h2 class="section-title">jejeStudio Case Customizer</h2>
-      <p class="section-subtitle">Design a bespoke phone case featuring custom graphics, textures, and typography.</p>
-
-      <!-- Interactive Phone Preview -->
-      <div class="phone-preview-card">
-        <div class="phone-case">
-          <div class="camera-bump"></div>
-        </div>
-      </div>
-
-      <!-- 1. Device Selection -->
-      <div class="option-card">
-        <div class="option-header">
-          <i data-lucide="smartphone"></i> 1. Choose Device
-        </div>
-        <select class="select-input">
-          <option>iPhone 15 Pro</option>
-          <option>iPhone 15 Pro Max</option>
-          <option>iPhone 14</option>
-        </select>
-      </div>
-
-      <!-- 2. Material Texture Selection -->
-      <div class="option-card">
-        <div class="option-header">
-          <i data-lucide="palette"></i> 2. Choose Material Texture
-        </div>
-        <div class="grid-buttons">
-          <button class="grid-btn active">Clear Gel</button>
-          <button class="grid-btn">Stealth Matte</button>
-          <button class="grid-btn">Gold Marble</button>
-          <button class="grid-btn">Wood Veneer</button>
-          <button class="grid-btn">French Leather</button>
-          <button class="grid-btn">Neon Gradient</button>
-        </div>
-        
-        <p class="sub-label">CASE ACCENT/TRIM COLOR</p>
-        <div class="color-dots">
-          <div class="color-dot active" style="background-color: #18181B;"></div>
-          <div class="color-dot" style="background-color: #EC4899;"></div>
-          <div class="color-dot" style="background-color: #1E3A8A;"></div>
-          <div class="color-dot" style="background-color: #064E3B;"></div>
-          <div class="color-dot" style="background-color: #DC2626;"></div>
-          <div class="color-dot" style="background-color: #7C3AED;"></div>
-        </div>
-      </div>
-
-      <!-- 3. Custom Image Upload -->
-      <div class="option-card">
-        <div class="option-header">
-          <i data-lucide="image"></i> 3. Upload Custom Art
-        </div>
-        <div class="upload-box">
-          <i data-lucide="upload-cloud" class="upload-icon"></i>
-          <p class="upload-main-text">Drag and drop image here or <span>browse files</span></p>
-          <p class="upload-sub-text">Supports JPEG, PNG under 5MB</p>
-        </div>
-      </div>
-
-      <!-- 4. Typography Customization -->
-      <div class="option-card">
-        <div class="option-header">
-          <i data-lucide="type"></i> 4. Print Custom Text
-        </div>
-        <input type="text" class="text-input" placeholder="Type name, monogram, or phrase">
-        
-        <p class="sub-label">LUXURY FONT FAMILY</p>
-        <div class="grid-buttons grid-4">
-          <button class="grid-btn active">Modern Sans</button>
-          <button class="grid-btn">Royal Serif</button>
-          <button class="grid-btn">Tech Mono</button>
-          <button class="grid-btn">Cursive</button>
-        </div>
-
-        <p class="sub-label">TEXT COLOR</p>
-        <div class="color-dots space-mb">
-          <div class="color-dot border-dot" style="background-color: #FFFFFF;"></div>
-          <div class="color-dot active" style="background-color: #000000;"></div>
-          <div class="color-dot" style="background-color: #EC4899;"></div>
-          <div class="color-dot" style="background-color: #FEFCE8;"></div>
-          <div class="color-dot" style="background-color: #00F5D4;"></div>
-        </div>
-
-        <div class="slider-row">
-          <span>Text Size</span>
-          <span>20px</span>
-        </div>
-        <input type="range" class="range-slider" value="20">
-
-        <div class="slider-row">
-          <span>Vertical Position</span>
-          <span>75%</span>
-        </div>
-        <input type="range" class="range-slider" value="75">
-      </div>
-
-      <!-- Checkout / Add Button -->
-      <button class="btn-add-cart">Add Custom Case to Cart (1500 EGP)</button>
+    <!-- Section 2: Story Banner -->
+    <section class="story-banner">
+      <h2 class="story-title">Every Case Tells a Story</h2>
+      <p class="story-desc">Floral prints, marble swirls, holographic inks — find yours.</p>
+      <a href="#products" class="btn-pink-wide">Shop the Collection</a>
     </section>
 
-  </div>
+    <!-- Section 3: Value Proposition Cards -->
+    <section class="features-section">
+      
+      <!-- Feature Card 1 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i data-lucide="shield" class="feature-icon"></i>
+        </div>
+        <h3 class="feature-title">10ft Drop Certified</h3>
+        <p class="feature-desc">
+          Premium shock-absorbing bumper edges and high-impact clear backing safeguard your device from high drops.
+        </p>
+      </div>
 
+      <!-- Feature Card 2 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i data-lucide="sparkles" class="feature-icon"></i>
+        </div>
+        <h3 class="feature-title">Anti-Yellowing Composites</h3>
+        <p class="feature-desc">
+          Advanced UV-resistant acrylic composite prevents ambering, keeping clear gel cases beautiful for longer.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Initialize Lucide Icons -->
   <script>
     lucide.createIcons();
   </script>
