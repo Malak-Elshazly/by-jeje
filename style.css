@@ -1,14 +1,14 @@
 /* ==========================================
-   1. Theme Variables & Reset
+   1. Theme Variables & Global Resets
    ========================================== */
 :root {
   --bg-cream: #FEFCE8;
-  --pink-primary: #EC4899;
-  --pink-hover: #DB2777;
-  --card-bg: #FFFFFF;
-  --text-dark: #18181B;
-  --text-muted: #71717A;
-  --border-color: #E4E4E7;
+  --pink-primary: #F472B6;
+  --pink-accent: #EC4899;
+  --card-bg: #FCFBF7;
+  --text-dark: #1C1917;
+  --text-muted: #78716C;
+  --border-subtle: #E7E5E4;
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -24,13 +24,19 @@ body {
   color: var(--text-dark);
   font-family: var(--font-sans);
   line-height: 1.5;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* ==========================================
-   2. Header Navigation
+   2. Header & Navigation
    ========================================== */
-header {
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,21 +44,21 @@ header {
   background-color: var(--bg-cream);
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
 }
 
 .brand-logo {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   text-decoration: none;
   color: var(--text-dark);
-  line-height: 1.1;
+  line-height: 1.0;
 }
 
-.brand-logo span {
-  color: var(--pink-primary);
+.brand-logo .dot {
+  color: var(--pink-accent);
 }
 
 .nav-icons {
@@ -70,66 +76,63 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2px;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8px;
 }
 
 .badge {
   position: absolute;
   top: -4px;
-  right: -6px;
+  right: -5px;
   background-color: var(--pink-primary);
   color: white;
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 9px;
+  font-weight: 700;
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* ==========================================
-   3. Main Container
-   ========================================== */
-.container {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* ==========================================
-   4. Hero Banner Section
+   3. Section 1: Hero Banner
    ========================================== */
 .hero-banner {
-  position: relative;
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  padding: 40px 20px;
+  padding: 36px 20px;
   color: white;
   text-align: center;
-  margin-bottom: 24px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+  margin-bottom: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
               url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
 }
 
 .hero-badge {
   display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   padding: 4px 16px;
   font-size: 11px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   backdrop-filter: blur(4px);
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 12px;
+  line-height: 1.15;
+  margin-bottom: 14px;
 }
 
 .hero-title i {
@@ -139,9 +142,11 @@ header {
 
 .hero-desc {
   font-size: 13px;
-  opacity: 0.9;
+  opacity: 0.95;
   margin-bottom: 24px;
   font-weight: 400;
+  line-height: 1.5;
+  padding: 0 8px;
 }
 
 .hero-actions {
@@ -154,232 +159,121 @@ header {
   background-color: var(--pink-primary);
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 30px;
   font-size: 13px;
   font-weight: 600;
-  cursor: pointer;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  text-decoration: none;
 }
 
 .btn-glass {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 30px;
   font-size: 13px;
   font-weight: 600;
-  cursor: pointer;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.txt-icon {
+  font-family: var(--font-serif);
+  font-size: 12px;
 }
 
 /* ==========================================
-   5. Customizer Components
+   4. Section 2: Story Banner
    ========================================== */
-.section-title {
+.story-banner {
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 36px 20px;
+  color: white;
+  text-align: left;
+  margin-bottom: 24px;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+              url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.story-title {
   font-family: var(--font-serif);
   font-size: 28px;
-  margin-bottom: 6px;
-}
-
-.section-subtitle {
-  color: var(--text-muted);
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-.phone-preview-card {
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-
-.phone-case {
-  width: 140px;
-  height: 250px;
-  background: #E5E7EB;
-  border-radius: 28px;
-  position: relative;
-  border: 4px solid #D1D5DB;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
-
-.camera-bump {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 45px;
-  height: 45px;
-  background: #111827;
-  border-radius: 12px;
-}
-
-.option-card {
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-}
-
-.option-header {
-  font-family: var(--font-serif);
-  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-bottom: 10px;
 }
 
-.select-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  background-color: #FAFAFA;
-  font-family: var(--font-sans);
+.story-desc {
   font-size: 13px;
-  outline: none;
+  opacity: 0.95;
+  margin-bottom: 20px;
 }
 
-.text-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  background-color: var(--bg-cream);
-  font-family: var(--font-sans);
-  font-size: 13px;
-  outline: none;
-  margin-bottom: 14px;
-}
-
-.sub-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin: 16px 0 8px;
-}
-
-.grid-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 16px;
-}
-
-.grid-btn {
-  padding: 12px 8px;
-  border: 1px solid var(--border-color);
-  background: #FAFAFA;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: center;
-}
-
-.grid-btn.active {
-  border: 2px solid var(--pink-primary);
-  background: #FFF;
-  color: var(--pink-primary);
-  font-weight: 600;
-}
-
-.color-dots {
-  display: flex;
-  gap: 12px;
-}
-
-.space-mb {
-  margin-bottom: 16px;
-}
-
-.color-dot {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.border-dot {
-  border: 1px solid var(--border-color);
-}
-
-.color-dot.active {
-  border-color: var(--text-dark);
-}
-
-.upload-box {
-  border: 2px dashed var(--border-color);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  color: var(--text-muted);
-  cursor: pointer;
-}
-
-.upload-icon {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 8px;
-}
-
-.upload-main-text {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.upload-main-text span {
-  color: var(--pink-primary);
-}
-
-.upload-sub-text {
-  font-size: 10px;
-  margin-top: 4px;
-}
-
-.slider-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
-
-.range-slider {
-  width: 100%;
-  accent-color: var(--pink-primary);
-  margin-bottom: 12px;
-}
-
-.btn-add-cart {
-  width: 100%;
+.btn-pink-wide {
   background-color: var(--pink-primary);
   color: white;
   border: none;
-  padding: 16px;
+  padding: 12px 24px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ==========================================
+   5. Section 3: Feature Cards
+   ========================================== */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.feature-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.feature-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--pink-accent);
+}
+
+.feature-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
   font-weight: 700;
-  cursor: pointer;
-  margin-top: 10px;
-  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
